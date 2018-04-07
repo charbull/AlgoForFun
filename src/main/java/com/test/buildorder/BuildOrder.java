@@ -37,7 +37,7 @@ public class BuildOrder {
 		retrieveInOrder(root, 0);
 	}
 
-	private static List<NodeGraph> list = new ArrayList();
+	private static List<NodeGraph> list = new ArrayList<NodeGraph>();
 
 	private static void retrieveInOrder(NodeGraph root, int order) {
 
@@ -47,7 +47,7 @@ public class BuildOrder {
 			if(!list.contains(root))
 			{
 				order = order +1;
-				System.out.println(order +" "+root.name);
+				System.out.println(order +"- "+root.name);
 				list.add(root);
 			}
 			if(root.children != null)
@@ -56,7 +56,7 @@ public class BuildOrder {
 				{
 					if(!list.contains(child))
 					{
-						System.out.println(order+1 +" "+child.name);
+						System.out.println(order+1 +"- "+child.name);
 						list.add(child);
 					}
 				}
