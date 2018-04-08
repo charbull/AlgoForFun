@@ -1,9 +1,18 @@
 package com.test;
 
-import com.test.NodeDistanceInTree.TreeNode;
-
 public class FindLCA {
-
+	  class TreeNode {
+	      int data;
+	      TreeNode left;
+	      TreeNode right;
+	      TreeNode(int data, TreeNode left, TreeNode right) {
+	      this.data = data;
+	      this.left = left;
+	      this.right = right;
+	      }
+	  }
+	
+	
 	public TreeNode findLCA(TreeNode root, TreeNode a, TreeNode b) {
         
 	    if(root == null) return null;
