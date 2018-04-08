@@ -1,7 +1,5 @@
 package com.test;
 
-import com.test.NodeDistanceInTree.TreeNode;
-
 public class DistanceBetweenTwoNodes {
 
 	  class TreeNode {
