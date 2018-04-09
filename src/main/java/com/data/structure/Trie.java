@@ -21,45 +21,79 @@ public class Trie{
 		return character - 'a';
 	}
 
-	private Trie insertCharacter(char character, boolean wordCompleted)
-	{
-		int index = getIndex(character);
-		Trie insertionNode = this.alphabet[index];
-		if(insertionNode == null)
-		{
-			insertionNode = new Trie(character, wordCompleted);
-			this.alphabet[index] = insertionNode;
-			return insertionNode;
-		}
-		else return insertionNode.insertCharacter(character, wordCompleted);
-	}
 
 	public void insertWord(String word)
 	{
 		char wordArray[] = word.toCharArray();
-		Trie insertionNode = null;
+		Trie insertionNode = this.insertCharacter(wordArray[0], false, this);
 
 		if(word.length() == 1)
 		{
-			insertionNode = this.insertCharacter(wordArray[0], true);
+			insertionNode.wordCompleted = true;
+		}
+		for(int i=1; i<word.length()-1;i++)
+		{
+			insertionNode = insertionNode.insertCharacter(wordArray[i], false, insertionNode);
+		}
+		insertionNode.insertCharacter(wordArray[word.length()-1], true, insertionNode);
+	}
+
+	private Trie insertCharacter(char character, boolean wordCompleted, Trie trie)
+	{
+		int index = getIndex(character);
+		Trie insertionNode = trie.alphabet[index];
+		if(insertionNode == null)
+		{	
+			//create a new Trie and add it to the parent trie
+			insertionNode = new Trie(character, wordCompleted);
+			trie.alphabet[index] = insertionNode;
+		}
+		//it already exists just set the boolean and return
+		else{
+			insertionNode.wordCompleted = wordCompleted;
+		}
+		return insertionNode;
+	}
+
+	public boolean searchWord(String word) {
+		char wordArray[] = word.toCharArray();
+		Trie currentTrie = searchPrefixCharacter(wordArray[0], this);
+		if(word.length() == 1)
+		{
+			if(currentTrie != null) return currentTrie.wordCompleted;
 		}
 		else
 		{
-			insertionNode = this.insertCharacter(wordArray[0], false);
+			for(int i=1; i<word.length(); i++)
+			{
+				if(currentTrie == null) return false;
+				currentTrie = searchPrefixCharacter(wordArray[i], currentTrie);	
+			}
+			if(currentTrie != null ) return currentTrie.wordCompleted;
+			else return false;
 		}
-
-		for(int i=1; i<word.length()-1;i++)
-		{
-			insertionNode = insertionNode.insertCharacter(wordArray[i], false);
-		}
-		insertionNode.insertCharacter(wordArray[word.length()-1], true);
+		return false;
 	}
 
-	public boolean searchPrefix(String word) {return true;}
+
+	private Trie searchPrefixCharacter(char character, Trie trie)
+	{
+		int index = getIndex(character);
+		if(trie == null) return null;
+		return trie.alphabet[index];
+	}
+
 
 	// Returns true if the enture word is found
-	public boolean searchWord(String word)
+	public boolean searchPrefix(String word)
 	{
-		return true;
+		char wordArray[] = word.toCharArray();
+		Trie currentTrie = searchPrefixCharacter(wordArray[0], this);
+		for(int i=1; i<word.length(); i++)
+		{
+			if(currentTrie == null) return false;
+			currentTrie = searchPrefixCharacter(wordArray[i], currentTrie);	
+		}
+		return currentTrie != null;
 	}
 }
