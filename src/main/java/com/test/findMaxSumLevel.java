@@ -7,7 +7,12 @@ import com.test.FindLCA.TreeNode;
 
 public class findMaxSumLevel {
 
-	public int findMaxSumLevel(TreeNode root) {                    
+	
+	public findMaxSumLevel(){
+		
+	}
+	
+	public int findMaxSumLevelNode(TreeNode root) {                    
         if(root == null) return -1;
         int currSum = 0, maxSum = 0;
         int currLvl = 0, maxLvl = 0;
