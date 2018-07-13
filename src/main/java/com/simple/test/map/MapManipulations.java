@@ -66,7 +66,30 @@ public class MapManipulations {
 
 	}
 
+	// java.util.* and java.util.streams.* have been imported for this problem.
+	// You don't need any other imports.
 
+	public static ArrayList<String> removeDuplicates2(List<String> input) {
+	    
+	    Map<String, Integer> mapCounter = new HashMap<String,Integer>();
+	    for(String s: input)
+	    {
+	        Integer counter = mapCounter.get(s);
+	        if(counter == null)
+	        {
+	            mapCounter.put(s, 1);
+	        }
+	        else
+	        {
+	            mapCounter.put(s, counter+1);
+	        }
+	    }
+	    
+	    ArrayList<String> listString = (ArrayList<String>) mapCounter.entrySet().parallelStream().filter(x -> x.getValue() == 1).map(x -> x.getKey()).collect(Collectors.toList());
+	    Collections.sort(listString);
+	    return listString;
+
+	}
 
 	public static void singleNumberKeys(int[] A) {
 
