@@ -7,15 +7,7 @@ import java.util.stream.Collectors;
 public class TestAnagram {
 
 	public static void main(String[] args) {
-		//	boolean answer = anagram("acta", "cat");
-		//	System.out.println(answer);
-
-//		int [][] matrix = {
-//				{6, 2, 4}, 
-//				{1, 2, 3},
-//				{9, 8, 0}
-//		};
-//		matrixZero(matrix);
+		
 		List<String> listOfString = Arrays.asList("Charbel", "Bob", "Charbel");
 		List<String> duplicates = removeDuplicates(listOfString);
 		for (String currentString : duplicates) {
@@ -29,46 +21,6 @@ public class TestAnagram {
 	{
 		return list.parallelStream().map(x -> x.toString()).distinct().collect(Collectors.toList());
 	}
-
-	public static void printMatrix(int[][] matrix)
-	{
-		for (int i = 0; i < matrix.length; i++) 
-		{ 
-			System.out.print("{");
-			for (int j = 0; j < matrix.length; j++) { 
-				System.out.print(" "+matrix[i][j]+" "); 
-			}
-			System.out.println("}");
-		}
-	}
-
-	public static void matrixZero(int [][]matrix)
-	{
-		for (int i = 0; i < matrix.length; i++) 
-		{
-			for (int j = 0; j < matrix.length; j++)
-			{
-				
-			}
-		}
-	}
-	
-//	public static int[][] rotateMatrix90(int [][]matrix)
-//	{
-//		int numberOfPermutation = matrix.length -1;
-//		for(int i=0;i<matrix.length;i++)
-//		{
-//			for (int j = 0; j < matrix.length; j++) { 
-//				int[] temp = [j];
-//			}
-//		}*/
-//
-//
-//		printMatrix(matrix);
-//		return matrix;
-//	}
-
-
 
 
 	public static boolean anagram(String s, String t) {
