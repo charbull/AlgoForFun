@@ -9,7 +9,7 @@ public class PrintValidParentheses {
 
 	public static void main(String[] args) {
 		printList(printValidParetheses(3));
-		printList(printValidParetheses(4));
+		//printList(printValidParetheses(4));
 	}
 
 	private static void printList(Set<String> list)

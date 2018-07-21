@@ -26,4 +26,9 @@ public class DeleteBST {
         }
         return root;
     }
+	
+	private TreeNode findMin(TreeNode root)
+	{
+		return root;//it should find the TreeNode with data minimum
+	}
 }
