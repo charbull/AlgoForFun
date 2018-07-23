@@ -33,7 +33,7 @@ public class BeagleBoardWithTrie {
 	    public List<String> findWords(char[][] board, String[] words) {
 	        List<String> res = new ArrayList<>();
 	        if (words == null || words.length == 0 || board == null || board.length == 0 || board[0].length == 0) return res;
-	        root = new TrieNode();
+	        root = new TrieNode(); 
 	        for (String w: words) {
 	            insert(w);
 	        }
