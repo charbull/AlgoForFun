@@ -84,8 +84,8 @@ public class MapManipulations {
 	            mapCounter.put(s, counter+1);
 	        }
 	    }
-	    
-	    ArrayList<String> listString = (ArrayList<String>) mapCounter.entrySet().parallelStream().filter(x -> x.getValue() == 1).map(x -> x.getKey()).collect(Collectors.toList());
+	    int val = 1;
+	    ArrayList<String> listString = (ArrayList<String>) mapCounter.entrySet().parallelStream().filter(x -> x.getValue() == val).map(x -> x.getKey()).collect(Collectors.toList());
 	    Collections.sort(listString);
 	    return listString;
 
