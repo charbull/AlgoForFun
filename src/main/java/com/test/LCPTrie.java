@@ -1,4 +1,4 @@
-package com.test;
+/*package com.test;
 
 public class LCPTrie {
 
@@ -71,3 +71,4 @@ public class LCPTrie {
 	    }
 	}
 }
+*/
