@@ -1,10 +1,10 @@
-package com.test;
+package com.data.tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import com.test.FindLCA.TreeNode;
+import com.data.structure.TreeNode;
 
 public class PrintLevelByLevel {
 

@@ -3,7 +3,7 @@ package com.test;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import com.test.FindLCA.TreeNode;
+import com.data.tree.FindLCA.TreeNode;
 
 public class findMaxSumLevel {
 
