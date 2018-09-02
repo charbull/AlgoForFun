@@ -4,6 +4,7 @@ import java.util.Date;
 
 class TimeCard {
 	Date dt = new Date();
+	@SuppressWarnings("static-access")
 	public void punch(String name) {
 		System.out.println(name + " punched in at: \t" +
 				((int)(System.currentTimeMillis() - dt.getTime()) /1000));

@@ -2,7 +2,7 @@ package com.data.tree;
 
 import java.util.LinkedList;
 
-public class BST {
+public class ValidateBSTRecursive {
 
 	public static class Node{
 		int data;

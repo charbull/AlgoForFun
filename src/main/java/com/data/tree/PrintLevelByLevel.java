@@ -8,14 +8,34 @@ import com.data.structure.TreeNode;
 
 public class PrintLevelByLevel {
 
-	
-	// java.util.* and java.util.streams.* have been imported for this problem.
-	// You don't need any other imports.
+	public static void main(String[] args) {
+		TreeNode n3 = new TreeNode(3);
+		TreeNode n2 = new TreeNode(2);
+		TreeNode n1 = new TreeNode(1);
+		TreeNode n4 = new TreeNode(4);
+		TreeNode n5 = new TreeNode(5);
+		TreeNode n6 = new TreeNode(6);
+		TreeNode n7 = new TreeNode(7);
 
-	public ArrayList<ArrayList<Integer>> printLevelByLevel(TreeNode root) {
-	                           
+		n1.left = n2;
+		n1.right = n3;
+		n2.left = n4;
+		n2.right = n5;
+		
+		n3.left = n6;
+		n3.right = n7;
+		
+		ArrayList<ArrayList<Integer>> list = printLevelByLevel(n1);
+		for(ArrayList<Integer> sublist : list)
+		{
+			for(int i : sublist) System.out.print(i+", ");
+			System.out.println();
+		}
+		
 
-	ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
+	}
+	public static ArrayList<ArrayList<Integer>> printLevelByLevel(TreeNode root) {
+	ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
 	Queue<TreeNode> queue = new LinkedList<TreeNode>();
 	ArrayList<Integer> listLevel = new ArrayList<Integer>();
 	if(root != null )
@@ -38,7 +58,7 @@ public class PrintLevelByLevel {
 	        //reached another level
 	        else{
 	         //put the previous level
-	         list.add(listLevel);
+	         res.add(listLevel);
 	         //create a new level
 	         listLevel = new ArrayList<Integer>();   
 	         //insert a new null
@@ -47,7 +67,7 @@ public class PrintLevelByLevel {
 	        }
 	    }
 	}
-	 return list;
+	 return res;
 
 
 

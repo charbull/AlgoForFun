@@ -5,7 +5,7 @@ import java.util.Queue;
 
 import com.data.structure.TreeNode;
 
-public class BSTItr {
+public class ValidateBSTItr {
 
 	public static boolean validateBSTItr(TreeNode root) {
 
