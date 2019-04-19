@@ -1,3 +1,4 @@
+package com.test;
 /*package com.test;
 
 public class LCPTrie {

@@ -1,5 +1,6 @@
 package com.test;
 
+
 import java.io.IOException;
 
 public class ZigZag {
