@@ -2,11 +2,8 @@ package com.map.reduce;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 class Transaction {
 	int productID;
@@ -73,12 +70,6 @@ public class sumMapR {
 					" , Q "+t.quantity);
 		}
 		long x = listTransactions.parallelStream().map(t -> t.productID).count();
-				
-
-
-
-
-
-
+		System.out.println("x is "+x);
 	}
 }

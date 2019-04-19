@@ -84,7 +84,7 @@ public class Trie{
 	}
 
 
-	// Returns true if the enture word is found
+	// Returns true if the entire word is found
 	public boolean searchPrefix(String word)
 	{
 		char wordArray[] = word.toCharArray();

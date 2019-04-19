@@ -18,7 +18,7 @@ public class MapManipulations {
 
 		for(int current: A)
 		{
-		    Integer currentInteger = new Integer(current);
+		    Integer currentInteger = Integer.valueOf(current);
 		    Integer count = numbersMap.get(currentInteger);
 		    if(count == null)
 		    {
@@ -48,7 +48,7 @@ public class MapManipulations {
 		Map<Integer, Integer> numbersMap = new HashMap<Integer, Integer>();
 
 		for (int current : A) {
-			Integer currInteger = new Integer(current);
+			Integer currInteger =  Integer.valueOf(current);
 			Integer occuration = numbersMap.get(currInteger);
 			if (occuration != null) {
 				numbersMap.put(currInteger, occuration + 1);
@@ -96,7 +96,7 @@ public class MapManipulations {
 		Map<Integer, Integer> numbersMap = new HashMap<Integer, Integer>();
 
 		for (int current : A) {
-			Integer currInteger = new Integer(current);
+			Integer currInteger = Integer.valueOf(current);
 			Integer occuration = numbersMap.get(currInteger);
 			if (occuration != null) {
 				numbersMap.put(currInteger, occuration + 1);
